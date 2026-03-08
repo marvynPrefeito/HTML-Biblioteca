@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>📚 Minha Biblioteca</h1>
+
+<button onclick="mostrar('terror')">Terror</button>
+<button onclick="mostrar('romance')">Romance</button>
+<button onclick="mostrar('fantasia')">Fantasia</button>
+<button onclick="mostrar('todos')">Todos</button>
+
+<hr>
+
+<!-- LIVRO 1 -->
+
+<div class="terror livro">
+
+<img src="https://m.media-amazon.com/images/I/61gfnGu9cTL._SY342_.jpg" width="150">
+
+<h2>DRÁCULA DARK EDITION</h2>
+
+<button onclick="verSinopse('s1')">Ver sinopse</button>
+
+<p id="s1" class="sinopse">
+Um clássico absoluto do terror, Bram Stoker define em Drácula a forma como nós entendemos e pensamos os vampiros atualmente. Mais que isso, ele traz esse monstro para o centro do palco da cultura pop do nosso século e eterniza o vilão de modos refinados e comportamento sanguinário.
+</p>
+
+<a href="https://www.amazon.com.br/DR%C3%81CULA-DARK-COMPLETA-INTEGRAL-ILUSTRA%C3%87%C3%95ES/dp/8566636236/ref=sr_1_3?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=OT4M8AGOGSWY&dib=eyJ2IjoiMSJ9.uM50T8ema-48QGOHLm2MtSS81g2QMYz6vZI0qmKcW3wzWFKJMPoI0pesj7m2O2MWh5nXifYG4wH6ipHLFQ95YJ7u9yb_FSAydiuXTUkxlvjHQWtsMORAZzniapPXw8QAJzodcsIvaRd_dcvRcyrd0UuzhRnLGgPxtUm0dZygOwp_vZOQl4fVqrzzfwLTDEo-75kEjodPdMf1bToKGt5igwgIu6q24BH6c4zVUEXUse0YcdekycQcj2zPwjPkPG34vzHOisTlF_punbRscRuYPx_FKuqISJRIDhmrLkaWhY0.y6OkBqhENrMKCfX5HT1TIxjl89gKE8mWrQxbuefD9B4&dib_tag=se&keywords=dracula&qid=1772930299&sprefix=dracula%2Caps%2C239&sr=8-3" target="_blank">
+<button>Comprar</button>
+</a>
+
+</div>
+
+
+<!-- LIVRO 2 -->
+
+<div class="romance livro">
+
+<img src="https://m.media-amazon.com/images/I/81OthjkJBuL.jpg" width="150">
+
+<h2>Dom Casmurro</h2>
+
+<button onclick="verSinopse('s2')">Ver sinopse</button>
+
+<p id="s2" class="sinopse">
+Bentinho conta sua história de amor com Capitu cheia de dúvidas e ciúmes.
+</p>
+
+<a href="https://www.amazon.com" target="_blank">
+<button>Comprar</button>
+</a>
+
+</div>
+
+
+<!-- LIVRO 3 -->
+
+<div class="fantasia livro">
+
+<img src="https://m.media-amazon.com/images/I/81eB+7+CkUL.jpg" width="150">
+
+<h2>O Pequeno Príncipe</h2>
+
+<button onclick="verSinopse('s3')">Ver sinopse</button>
+
+<p id="s3" class="sinopse">
+Uma história sobre amizade, amor e a forma de ver o mundo.
+</p>
+
+<a href="https://www.amazon.com" target="_blank">
+<button>Comprar</button>
+</a>
+
+</div>
+
+
+<script>
+
+function verSinopse(id){
+
+var texto = document.getElementById(id);
+
+if(texto.style.display == "block"){
+texto.style.display = "none";
+}
+
+else{
+texto.style.display = "block";
+}
+
+}
+
+
+function mostrar(genero){
+
+var livros = document.getElementsByClassName("livro");
+
+for(var i = 0; i < livros.length; i++){
+
+if(genero == "todos"){
+livros[i].style.display = "block";
+}
+
+else if(livros[i].classList.contains(genero)){
+livros[i].style.display = "block";
+}
+
+else{
+livros[i].style.display = "none";
+}
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
